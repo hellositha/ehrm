@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\EmployeeResource\Pages;
-use App\Filament\Resources\EmployeeResource\RelationManagers;
-use App\Models\Employee;
+use App\Filament\Resources\LeaveResource\Pages;
+use App\Filament\Resources\LeaveResource\RelationManagers;
+use App\Models\Leave;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -13,9 +13,9 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class EmployeeResource extends Resource
+class LeaveResource extends Resource
 {
-    protected static ?string $model = Employee::class;
+    protected static ?string $model = Leave::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
@@ -43,20 +43,20 @@ class EmployeeResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-
+    
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-
+    
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListEmployees::route('/'),
-            'create' => Pages\CreateEmployee::route('/create'),
-            'edit' => Pages\EditEmployee::route('/{record}/edit'),
+            'index' => Pages\ListLeaves::route('/'),
+            'create' => Pages\CreateLeave::route('/create'),
+            'edit' => Pages\EditLeave::route('/{record}/edit'),
         ];
-    }
+    }    
 }

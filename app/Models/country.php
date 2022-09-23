@@ -9,6 +9,6 @@ class country extends Model
 {
     use HasFactory;
 
-    protected static ?string $navigationGroup = 'System management';
+    protected $guarded =[];
 
 }
