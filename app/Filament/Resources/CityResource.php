@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class CityResource extends Resource
 {
     protected static ?string $model = City::class;
+    protected static ?string $navigationGroup = 'System management';
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
@@ -43,14 +44,14 @@ class CityResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +59,5 @@ class CityResource extends Resource
             'create' => Pages\CreateCity::route('/create'),
             'edit' => Pages\EditCity::route('/{record}/edit'),
         ];
-    }    
+    }
 }

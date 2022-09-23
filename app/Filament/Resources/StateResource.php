@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class StateResource extends Resource
 {
     protected static ?string $model = State::class;
-
+    protected static ?string $navigationGroup = 'System management';
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form
@@ -43,14 +43,14 @@ class StateResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +58,5 @@ class StateResource extends Resource
             'create' => Pages\CreateState::route('/create'),
             'edit' => Pages\EditState::route('/{record}/edit'),
         ];
-    }    
+    }
 }

@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class CountryResource extends Resource
 {
     protected static ?string $model = Country::class;
-
+    protected static ?string $navigationGroup = 'System management';
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form
@@ -43,14 +43,14 @@ class CountryResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +58,5 @@ class CountryResource extends Resource
             'create' => Pages\CreateCountry::route('/create'),
             'edit' => Pages\EditCountry::route('/{record}/edit'),
         ];
-    }    
+    }
 }

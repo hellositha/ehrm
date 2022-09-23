@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class employee extends Model
 {
     use HasFactory;
+
+    protected static ?string $navigationGroup = 'Settings';
+
 }
